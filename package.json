@@ -1,0 +1,53 @@
+{
+  "name": "equation-solver-language",
+  "displayName": "Equation Solver Language",
+  "description": "Syntax highlighting for ESL",
+  "version": "0.0.1",
+  "author": "REPLACE_ME",
+  "license": "MIT",
+  "publisher": "REPLACE_ME",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage"
+  ],
+  "main": "./client/out/extension",
+  "contributes": {
+    "configuration": {},
+    "languages": [
+      {
+        "id": "es",
+        "aliases": [
+          "Equation Solver",
+          "es"
+        ],
+        "extensions": [
+          ".es"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "es",
+        "scopeName": "source.es",
+        "path": "./syntaxes/es.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  }
+}
